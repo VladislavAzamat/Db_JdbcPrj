@@ -1,0 +1,7 @@
+databaseChangeLog:
+  - include:
+      file: db.changelog/cources.sql
+  - include:
+      file: db.changelog/students.sql
+  - include:
+      file: db.changelog/credentials.sql
