@@ -41,7 +41,7 @@ public class CredentialRepository {
     public Credential getCredentialById(int credentialId) throws SQLException {
         Credential credential = null;
 
-        String sql = "SELECT * FROM credential WHERE id = ?";
+        String sql = "SELECT * FROM credential WHERE id = ?"; // лучше в статические константы
         try (Connection connection = DatabaseInitializer.getDatabaseConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setInt(1, credentialId);

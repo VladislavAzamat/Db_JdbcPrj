@@ -9,11 +9,11 @@ import java.util.List;
 
 public class CourceRepository {
 
-    private final String GET_ALL_COURCES = "SELECT * FROM course";
-    private final String GET_COURSE_BY_ID = "SELECT * FROM course WHERE id = ?";
-    private final String ADD_COURSE = "INSERT INTO course (title, duration, price) VALUES (?, ?, ?)";
-    private final String UPDATE_COURSE = "UPDATE course SET title = ?, duration = ?, price = ? WHERE id = ?";
-    private final String DELETE_COURSE = "DELETE FROM course WHERE id = ?";
+    private static final String GET_ALL_COURCES = "SELECT * FROM course";
+    private static final String GET_COURSE_BY_ID = "SELECT * FROM course WHERE id = ?";
+    private static final String ADD_COURSE = "INSERT INTO course (title, duration, price) VALUES (?, ?, ?)";
+    private static final String UPDATE_COURSE = "UPDATE course SET title = ?, duration = ?, price = ? WHERE id = ?";
+    private static final String DELETE_COURSE = "DELETE FROM course WHERE id = ?";
 
     private Connection connection;
     public CourceRepository(Connection connection) {

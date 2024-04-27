@@ -41,7 +41,7 @@ class CourceServiceTest {
 
         List<CourceDto> cources = courceService.getAllCources();
 
-        assertEquals(2, cources.size());
+        assertEquals(2, cources.size()); // если несколько ассертов, то их запихивать в assertAll
         assertEquals("Java", cources.get(0).getTitle());
         assertEquals(4.0f, cources.get(0).getDuration());
         assertEquals(1000, cources.get(0).getPrice());

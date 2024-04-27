@@ -14,45 +14,45 @@ import java.util.stream.Collectors;
 
 public class CredentialService {
 
-        private  CredentialRepository repository;
-        private  CredentialMapper mapper;
-        private StudentRepository studentRepository;
+    private CredentialRepository repository;
+    private CredentialMapper mapper;
+    private StudentRepository studentRepository;
 
-        public CredentialService() {
-            this.repository = new CredentialRepository();
-            this.mapper = new CredentialMapper();
-        }
+    public CredentialService() {
+        this.repository = new CredentialRepository();
+        this.mapper = new CredentialMapper();
+    }
 
-    public CredentialService( CredentialRepository credentialRepository, StudentRepository studentRepository) {
+    public CredentialService(CredentialRepository credentialRepository, StudentRepository studentRepository) {
         this.repository = credentialRepository;
         this.studentRepository = studentRepository;
     }
 
     public List<CredentialDto> getAllCredentials() throws SQLException {
-            List<Credential> credentials = repository.getAllCredentials();
-            return credentials.stream()
-                    .map(CredentialMapper::credentialToDto)
-                    .collect(Collectors.toList());
-        }
+        List<Credential> credentials = repository.getAllCredentials();
+        return credentials.stream()
+                .map(CredentialMapper::credentialToDto)
+                .collect(Collectors.toList());
+    }
 
-        public CredentialDto getCredentialById(int credentialId) throws SQLException {
-            Credential credential = repository.getCredentialById(credentialId);
-            return mapper.credentialToDto(credential);
-        }
+    public CredentialDto getCredentialById(int credentialId) throws SQLException {
+        Credential credential = repository.getCredentialById(credentialId);
+        return mapper.credentialToDto(credential);
+    }
 
-        public int addCredential(CredentialDto credentialDto) throws SQLException {
-            Credential credential = mapper.credentialDtoToEntity(credentialDto);
-            return repository.addCredential(credential);
-        }
+    public int addCredential(CredentialDto credentialDto) throws SQLException {
+        Credential credential = mapper.credentialDtoToEntity(credentialDto);
+        return repository.addCredential(credential);
+    }
 
-        public void updateCredential(int credentialId, CredentialDto credentialDto) throws SQLException {
-            Credential credential = mapper.credentialDtoToEntity(credentialDto);
-            credential.setId(credentialId);
-            repository.updateCredential(credentialId, credential);
-        }
+    public void updateCredential(int credentialId, CredentialDto credentialDto) throws SQLException {
+        Credential credential = mapper.credentialDtoToEntity(credentialDto);
+        credential.setId(credentialId);
+        repository.updateCredential(credentialId, credential);
+    }
 
-        public void deleteCredential(int credentialId) throws SQLException {
-            repository.deleteCredential(credentialId);
-        }
+    public void deleteCredential(int credentialId) throws SQLException {
+        repository.deleteCredential(credentialId);
+    }
 
 }
