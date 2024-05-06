@@ -17,6 +17,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+// Хороший код, молодец
 class CredentialServiceTest {
 
     private CredentialService credentialService;

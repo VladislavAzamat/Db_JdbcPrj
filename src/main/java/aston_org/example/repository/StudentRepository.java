@@ -16,7 +16,6 @@ public class StudentRepository {
     private static final String GET_STUDENTS_BY_COURSE_ID = "SELECT * FROM student WHERE course_id = ?";
 
     private Connection connection;
-    private final CourceRepository courceRepository = new CourceRepository();
 
     public StudentRepository(Connection connection) {
         this.connection = connection;

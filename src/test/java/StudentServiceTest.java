@@ -26,8 +26,7 @@ public class StudentServiceTest {
     @BeforeEach
     public void setUp() {
         MockitoAnnotations.initMocks(this);
-        StudentMapper studentMapper = new StudentMapper();
-        studentService = new StudentService(studentRepository, studentMapper);
+        studentService = new StudentService(studentRepository);
     }
 
     @Test
